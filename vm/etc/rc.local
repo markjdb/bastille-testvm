@@ -1,0 +1,4 @@
+cd /usr/tests
+kyua test
+kyua report
+shutdown -p now
