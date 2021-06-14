@@ -37,8 +37,12 @@ CMD make -C ${_FREEBSD_SRC_PATH} distribution -DNO_FSCHG DESTDIR=${_FREEBSD_BUIL
 CP vm/ ${_FREEBSD_BUILDROOT}
 CMD touch ${_FREEBSD_BUILDROOT}/firstboot
 
+CMD cp /etc/resolv.conf ${_FREEBSD_BUILDROOT}/etc/resolv.conf
 # Required to avoid bogus "test is broken" reports in sys/cddl/zfs.
 CMD pkg --chroot ${_FREEBSD_BUILDROOT} install -y ksh93
+# Required on FreeBSD 12.
+CMD pkg --chroot ${_FREEBSD_BUILDROOT} install -y kyua
+CMD rm ${_FREEBSD_BUILDROOT}/etc/resolv.conf
 
 # Create an EFI system partition.
 CMD mkdir -p ${_FREEBSD_BUILDROOT}/boot/efi/EFI/BOOT
