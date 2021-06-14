@@ -1,7 +1,7 @@
 ########################################################################
 # Public configuration variables.
 ARG JFLAG=-j4
-ARG TOOLCHAIN=llvm11
+ARG TOOLCHAIN=llvm12
 
 ARG FREEBSD_HOST_SRC_PATH=/usr/src
 ARG FREEBSD_KERNCONF=GENERIC
