@@ -1,4 +1,5 @@
 cd /usr/tests
+export PATH=${PATH}:/usr/local/bin:/usr/local/sbin
 kyua -v test_suites.FreeBSD.allow_sysctl_side_effects=1 test
 kyua report
 shutdown -p now
