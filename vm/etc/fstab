@@ -1,1 +1,2 @@
-gpt/rootfs / ufs rw 0 0
+gpt/rootfs	/	ufs	rw 0 0
+none		/dev/fd	fdescfs	rw 0 0
